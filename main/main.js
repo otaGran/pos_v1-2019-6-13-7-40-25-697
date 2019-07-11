@@ -123,16 +123,57 @@ const calculateTotalDiscount = (allReceiptData) => {
         allReceiptData[i].subTolPrice = calcultateDiscount(allReceiptData[i].barcode, allReceiptData[i], price, allReceiptData.count);
         totalDiscount += allReceiptData[i].subTolPrice;
     }
-    return allReceiptData.totalReducedPrice = allReceiptData.totalPrice - totalDiscount;
+    allReceiptData.totalReducedPrice = allReceiptData.totalPrice - totalDiscount;
+    return allReceiptData;
 };
 
 const generateReceiptData = (tags) => {
-    console.log(calculateTotalDiscount(calculateTolPrice(fillReceipt(normalizedTag(tags)))));
-    return calculateTotalDiscount(calculateTolPrice(fillReceipt(normalizedTag(tags))));
+    //console.log(calculateTotalDiscount(calculateTolPrice(fillReceipt(normalizeTag(tags)))));
+    return calculateTotalDiscount(calculateTolPrice(fillReceipt(normalizeTag(tags))));
 };
 
+const renderReceiptHeader=()=>{
+    return `***<没钱赚商店>收据***
+`
+}
+
+const renderReceiptItem=(receiptItem)=>{
+    return `名称：${receiptItem.name}，数量：${receiptItem.count}${receiptItem.unit}，单价：${receiptItem.price}(元)，小计: ${receiptItem.subTolPrice}(元)
+    `;
+
+}
+const renderAllReceiptItem=(allReceiptItems)=>{
+    let res ='';
+    for(let i = 0;i<allReceiptItems.length;i++){
+        res += renderReceiptItem(allReceiptItems[i]);
+    }
+    return res
+}
+
+const renderTotalPrice=(totalPrice)=>{
+    return `----------------------
+        总计：${totalPrice}(元)
+        `;
+
+}
+
+const renderTotalDiscount=(totalDiscount)=>{
+    return `节省：${totalDiscount}(元)
+    **********************`
+}
+
+const renderReceipt=(allReceiptData)=>{
+    return renderReceiptHeader()+renderAllReceiptItem(allReceiptData.allReceiptItems)+renderTotalPrice(allReceiptData.totalPrice)+renderTotalDiscount(allReceiptData.totalReducedPrice);
+
+}
+
+const printReceipt=(tags)=>{
+    console.log(renderReceipt(generateReceiptData(tags)))
+    return renderReceipt(generateReceiptData(tags));
+}
+
 module.exports = {
-    //printReceipt: printReceipt,
+    printReceipt: printReceipt,
     isAllBarcodeValid: isAllBarcodeValid,
     isBarcodeValid: isBarcodeValid,
     splitTag: splitTag,
