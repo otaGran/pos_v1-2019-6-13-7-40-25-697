@@ -1,10 +1,9 @@
 'use strict';
 
-
-const isValid=(tags) =>{
+const loadAllItems = require('../test/fixtures.js').loadAllItems
+const isAllBarcodeValid=(tags) =>{
     for (let i = 0; i < tags.length; i++) {
         if (isBarcodeValid(tags[i].substr(0, 10)) === false) {
-
             return false;
         }
     }
@@ -41,12 +40,11 @@ const dereplication = (splitedTags) => {
 
         let tmpStr = splitedTags[i].barcode;
         if (map.has(tmpStr)) {
-            map.set(tmpStr,map.get(tmpStr)+splitedTags[i].count);
+            map.set(tmpStr, map.get(tmpStr) + splitedTags[i].count);
         } else {
-            map.set(tmpStr,splitedTags[i].count);
+            map.set(tmpStr, splitedTags[i].count);
         }
     }
-    console.log(map);
     let dereplicatedTags = [];
     for (var [key, value] of map.entries()) {
         dereplicatedTags.push({"barcode": key, "count": value})
@@ -134,8 +132,9 @@ const generateReceiptData = (tags) => {
 };
 
 module.exports = {
-    printReceipt: printReceipt,
-    isValid: isValid,
+    //printReceipt: printReceipt,
+    isAllBarcodeValid: isAllBarcodeValid,
+    isBarcodeValid: isBarcodeValid,
     splitTag: splitTag,
     dereplication: dereplication,
     normalizedTag:normalizedTag,

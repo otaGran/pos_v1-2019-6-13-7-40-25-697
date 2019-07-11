@@ -53,3 +53,8 @@ function loadPromotions() {
     }
   ];
 }
+
+module.exports = {
+  //printReceipt: printReceipt,
+  loadAllItems: loadAllItems
+}

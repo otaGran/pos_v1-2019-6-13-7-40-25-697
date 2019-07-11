@@ -3,6 +3,10 @@
 
 
 const splitTag = require('../main/main.js').splitTag
+const isAllBarcodeValid = require('../main/main.js').isAllBarcodeValid
+
+const isBarcodeValid = require('../main/main.js').isBarcodeValid
+const dereplication = require('../main/main.js').dereplication
 // describe('pos', () => {
 //
 //   it('should print text', () => {
@@ -37,6 +41,32 @@ const splitTag = require('../main/main.js').splitTag
 //
 
 
+//isAllBarcodeValid
 it('should return false when barcode is ITEM000001-10.2', ()=>{
+  expect(isAllBarcodeValid(['ITEM000001-10.2','ITEM000067-10.2'])).toStrictEqual(false );
+})
+
+
+
+//isBarcodeValid
+it('should return false when barcode is ITEM000067-10.2', ()=>{
+  expect(isBarcodeValid('ITEM000067')).toStrictEqual(false );
+})
+it('should return true when barcode is ITEM000001-10.2', ()=>{
+  expect(isBarcodeValid('ITEM000001')).toStrictEqual(true );
+})
+
+//splitTag
+it('should return {"barcode": "ITEM000001", "count": 10.2} when barcode is ITEM000001-10.2', ()=>{
   expect(splitTag('ITEM000001-10.2')).toStrictEqual({"barcode": "ITEM000001", "count": 10.2} );
 })
+
+
+//dereplication
+it('should return {"barcode": "ITEM000001", "count": 10.2} when barcode is ITEM000001-10.2', ()=>{
+  expect(dereplication([{"barcode": "ITEM000001", "count": 10.2},{"barcode": "ITEM000001", "count": 10.4}])).toStrictEqual( [{"barcode": "ITEM000001", "count": 20.6}]);
+})
+
+
+
+
