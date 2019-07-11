@@ -93,6 +93,11 @@ it('should return false when barcode is ITEM000001-10.2', ()=>{
   expect(calculateTotalDiscount({"allReceiptItems": [{"barcode": "ITEM000001", "count": 20.6, "name": "雪碧", "price": 3, "subTolPrice": 61.800000000000004, "unit": "瓶"}], "totalPrice": 61.800000000000004})).toStrictEqual(false );
 })
 
+//isDiscount
+it('should return false when barcode is ITEM000001-10.2', ()=>{
+  expect(isAllBarcodeValid('ITEM000001')).toStrictEqual(false );
+})
+
 
 
 

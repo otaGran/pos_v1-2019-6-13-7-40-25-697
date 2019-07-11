@@ -56,5 +56,6 @@ function loadPromotions() {
 
 module.exports = {
   //printReceipt: printReceipt,
-  loadAllItems: loadAllItems
+  loadAllItems: loadAllItems,
+  loadPromotions: loadPromotions
 }

@@ -1,6 +1,7 @@
 'use strict';
 
 const loadAllItems = require('../test/fixtures.js').loadAllItems
+const loadPromotions = require('../test/fixtures.js').loadPromotions
 const isAllBarcodeValid=(tags) =>{
     for (let i = 0; i < tags.length; i++) {
         if (isBarcodeValid(tags[i].substr(0, 10)) === false) {
@@ -100,7 +101,8 @@ const calculateTolPrice = (allReceiptItems) => {
 };
 
 const isDiscount = (barcode) => {
-    let promotions = loadPromotions()[0].barcodes;
+    let db = loadPromotions();
+    let promotions = db[0].barcodes;
     for(let i = 0; i < promotions.length; i++) {
         if (barcode === promotions[i]){
             return true;
@@ -119,11 +121,13 @@ const calcultateDiscount = (barcode, price, count) => {
 
 const calculateTotalDiscount = (allReceiptData) => {
     let totalDiscount = 0;
-    for (let i = 0; i < allReceiptData.length; i++) {
-        allReceiptData[i].subTolPrice = calcultateDiscount(allReceiptData[i].barcode, allReceiptData[i], price, allReceiptData.count);
-        totalDiscount += allReceiptData[i].subTolPrice;
+
+    for (let i = 0; i < allReceiptData.allReceiptItems.length; i++) {
+        allReceiptData.allReceiptItems[i].subTolPrice = calcultateDiscount(allReceiptData.allReceiptItems[i].barcode, allReceiptData.allReceiptItems[i].price, allReceiptData.allReceiptItems[i].count);
+        totalDiscount += allReceiptData.allReceiptItems[i].subTolPrice;
     }
     allReceiptData.totalReducedPrice = allReceiptData.totalPrice - totalDiscount;
+    allReceiptData.totalPrice = totalDiscount;
     return allReceiptData;
 };
 

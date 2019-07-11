@@ -4,6 +4,7 @@
     <list default="true" id="65340186-2eca-4459-a198-08674d9d8f9e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/main/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/fixtures.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/fixtures.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/main.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/main.test.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -34,8 +35,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/main.test.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="101">
-              <caret line="92" column="31" selection-start-line="92" selection-start-column="31" selection-end-line="92" selection-end-column="31" />
+            <state relative-caret-position="151">
+              <caret line="97" column="33" lean-forward="true" selection-start-line="97" selection-start-column="33" selection-end-line="97" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -43,8 +44,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="70">
-              <caret line="119" column="18" selection-start-line="119" selection-start-column="18" selection-end-line="119" selection-end-column="18" />
+            <state relative-caret-position="175">
+              <caret line="127" column="5" lean-forward="true" selection-start-line="127" selection-start-column="5" selection-end-line="127" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -52,13 +53,18 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/fixtures.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="39">
-              <caret line="50" column="19" lean-forward="true" selection-start-line="50" selection-start-column="19" selection-end-line="50" selection-end-column="19" />
+            <state relative-caret-position="233">
+              <caret line="59" column="32" lean-forward="true" selection-start-line="59" selection-start-column="32" selection-end-line="59" selection-end-column="32" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>generateReceiptData</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -68,8 +74,8 @@
       <list>
         <option value="$PROJECT_DIR$/test/main-test.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/test/fixtures.js" />
         <option value="$PROJECT_DIR$/test/main.test.js" />
+        <option value="$PROJECT_DIR$/test/fixtures.js" />
         <option value="$PROJECT_DIR$/main/main.js" />
       </list>
     </option>
@@ -164,7 +170,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1562770406363</updated>
-      <workItem from="1562770407691" duration="8356000" />
+      <workItem from="1562770407691" duration="10026000" />
     </task>
     <task id="LOCAL-00001" summary="finish tasking diagram">
       <created>1562798704045</created>
@@ -201,43 +207,57 @@
       <option name="project" value="LOCAL" />
       <updated>1562805469932</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="update main.test.js">
+      <created>1562805941550</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1562805941550</updated>
+    </task>
+    <task id="LOCAL-00007" summary="update main.test.js">
+      <created>1562807669079</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1562807669079</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="main_test_js - 2019.07.11 at 08h 39m 40s.xml">
+    <history-entry file="main_test_js - 2019.07.11 at 09h 10m 39s.xml">
       <configuration name="main.test.js" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="main_test_js - 2019.07.11 at 08h 40m 58s.xml">
+    <history-entry file="main_test_js - 2019.07.11 at 09h 10m 56s.xml">
       <configuration name="main.test.js" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="main_test_js - 2019.07.11 at 08h 41m 09s.xml">
+    <history-entry file="main_test_js - 2019.07.11 at 09h 11m 15s.xml">
       <configuration name="main.test.js" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="main_test_js - 2019.07.11 at 08h 41m 32s.xml">
+    <history-entry file="main_test_js - 2019.07.11 at 09h 12m 39s.xml">
       <configuration name="main.test.js" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="main_test_js - 2019.07.11 at 08h 42m 51s.xml">
+    <history-entry file="main_test_js - 2019.07.11 at 09h 18m 21s.xml">
       <configuration name="main.test.js" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="main_test_js - 2019.07.11 at 08h 43m 15s.xml">
+    <history-entry file="main_test_js - 2019.07.11 at 09h 21m 00s.xml">
       <configuration name="main.test.js" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="main_test_js - 2019.07.11 at 08h 44m 04s.xml">
+    <history-entry file="main_test_js - 2019.07.11 at 09h 21m 27s.xml">
       <configuration name="main.test.js" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="main_test_js - 2019.07.11 at 08h 44m 32s.xml">
+    <history-entry file="main_test_js - 2019.07.11 at 09h 21m 55s.xml">
       <configuration name="main.test.js" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="main_test_js - 2019.07.11 at 08h 44m 58s.xml">
+    <history-entry file="main_test_js - 2019.07.11 at 09h 22m 12s.xml">
       <configuration name="main.test.js" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="main_test_js - 2019.07.11 at 08h 45m 11s.xml">
+    <history-entry file="main_test_js - 2019.07.11 at 09h 22m 59s.xml">
       <configuration name="main.test.js" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8356000" />
+    <option name="totallyTimeSpent" value="10026000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -284,24 +304,24 @@
     <entry file="file://$PROJECT_DIR$/task/task01.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/fixtures.js">
+    <entry file="file://$PROJECT_DIR$/test/main.test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="39">
-          <caret line="50" column="19" lean-forward="true" selection-start-line="50" selection-start-column="19" selection-end-line="50" selection-end-column="19" />
+        <state relative-caret-position="151">
+          <caret line="97" column="33" lean-forward="true" selection-start-line="97" selection-start-column="33" selection-end-line="97" selection-end-column="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/main.test.js">
+    <entry file="file://$PROJECT_DIR$/test/fixtures.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
-          <caret line="92" column="31" selection-start-line="92" selection-start-column="31" selection-end-line="92" selection-end-column="31" />
+        <state relative-caret-position="233">
+          <caret line="59" column="32" lean-forward="true" selection-start-line="59" selection-start-column="32" selection-end-line="59" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="70">
-          <caret line="119" column="18" selection-start-line="119" selection-start-column="18" selection-end-line="119" selection-end-column="18" />
+        <state relative-caret-position="175">
+          <caret line="127" column="5" lean-forward="true" selection-start-line="127" selection-start-column="5" selection-end-line="127" selection-end-column="5" />
         </state>
       </provider>
     </entry>
