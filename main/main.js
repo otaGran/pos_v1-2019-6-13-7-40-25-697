@@ -1,154 +1,147 @@
 'use strict';
 
 
+const isValid=(tags) =>{
+    for (let i = 0; i < tags.length; i++) {
+        if (isBarcodeValid(tags[i].substr(0, 10)) === false) {
 
-const isBarcodeValid=(barcode)=>{
-    let database = loadAllItems();
-    for(let i = 0;i<database.length;i++){
-        if(barcode === database[i].barcode)
-            return true;
-    }
-    return false;
-}
-
-const isAllBarcodeValid=(barcodes)=>{
-    for(let i = 0;i<barcodes.length;i++){
-        if(isBarcodeValid(barcodes[i].substr(0,10)) === false)
             return false;
+        }
     }
     return true;
 }
 
+const isBarcodeValid = (tag) => {
+    const allItems = loadAllItems();
+    for (let i = 0; i < allItems.length; i++) {
+        if (tag === allItems[i].barcode) {
 
-const splitTag=(tag)=>{
-
-    let barcode = '';
-    let count = 1;
-    if(tag.indexOf("-") === -1){
-        barcode = tag;
-    }else{
-        let tmpStr = tag.split("-");
-        barcode = tmpStr[0];
-        count = Number(tmpStr[1]);
-    }
-
-
-    return {"barcode":barcode,"count":count};
-}
-
-const dereplicate=(splitedTags)=>{
-    let myMap = new Map();
-    for(let i = 0;i< splitedTags.length;i++){
-        if(myMap.has(splitedTags[i].barcode)){
-            myMap[splitedTags[i].barcode] += splitedTags[i].count;
-        }else{
-            myMap[splitedTags[i].barcode] = splitedTags[i].count;
+            return true;
         }
     }
-    let dereplicatedTags = [];
+    return false;
+};
 
-    for (var [key, value] of myMap.entries()) {
-        dereplicatedTags.push({"barcode":key,"count":value});
+const splitTag = (tag) => {
+    let barcode = "";
+    let count = 1;
+    if (tag.indexOf('-') === -1) {
+        barcode = tag;
+    } else {
+        let tmp = tag.split('-');
+        barcode = tmp[0];
+        count = Number(tmp[1]);
     }
+    return {"barcode": barcode, "count": count};
+};
+
+const dereplication = (splitedTags) => {
+    let map = new Map();
+    for (let i = 0; i < splitedTags.length; i++) {
+
+        let tmpStr = splitedTags[i].barcode;
+        if (map.has(tmpStr)) {
+            map.set(tmpStr,map.get(tmpStr)+splitedTags[i].count);
+        } else {
+            map.set(tmpStr,splitedTags[i].count);
+        }
+    }
+    console.log(map);
+    let dereplicatedTags = [];
+    for (var [key, value] of map.entries()) {
+        dereplicatedTags.push({"barcode": key, "count": value})
+    }
+
+
     return dereplicatedTags;
 
+};
 
-}
-
-const normalizeTag=(tags)=>{
-
+const normalizedTag = (tags) => {
     let splitedTags = [];
-
-    for(let i = 0;i<tags;i++){
+    for (let i = 0; i < tags.length; i++) {
         splitedTags.push(splitTag(tags[i]));
+
     }
 
-    return dereplicate(splitedTags);
-}
+    return dereplication(splitedTags);
+};
 
-const getItemInfo=(barcode)=>{
-    const database = loadAllItems();
-
-    for(let i = 0;i<database.length;i++){
-        if(barcode === database[i].barcode)
-            return database[i];
+const getItemInfo = (barcode) => {
+    const datasource = loadAllItems();
+    for (let i = 0; i < datasource.length; i++) {
+        if (barcode === datasource[i].barcode) {
+            return datasource[i];
+        }
     }
+};
 
-}
-
-const fillReceiptItem=(normalizedTags)=>{
-
+const fillReceipt = (normalizedTags) => {
     let allReceiptItems = normalizedTags;
-
-
-    for(let i = 0;i<normalizedTags.length;i++){
+    for (let i = 0; i < normalizedTags.length; i++) {
         let tmp = getItemInfo(normalizedTags[i].barcode);
 
         allReceiptItems[i].name = tmp.name;
         allReceiptItems[i].unit = tmp.unit;
         allReceiptItems[i].price = tmp.price;
     }
-
     return allReceiptItems;
+};
 
-}
-
-const calculateSubTotalPrice=(price,count)=>{
+const calculateSubPrice = (price, count) => {
     return price * count;
-}
+};
 
-const calculateTotalPrice=(allReceiptItems)=>{
-
-    let totalPrice = 0;
-    for(let i = 0;i<allReceiptItems.length;i++){
-        allReceiptItems[i].subTotalPrice = allReceiptItems[i].price * allReceiptItems[i].count;
-        totalPrice += allReceiptItems[i].subTotalPrice;
+const calculateTolPrice = (allReceiptItems) => {
+    let sum = 0;
+    for (let i = 0; i < allReceiptItems.length; i++ ) {
+        allReceiptItems[i].subTolPrice = calculateSubPrice(allReceiptItems[i].price, allReceiptItems[i].count);
+        sum += allReceiptItems[i].subTolPrice;
     }
+    return {"allReceiptItems":allReceiptItems,"totalPrice":sum};
+};
 
-    return {"allReceiptItems":allReceiptItems,"totalPrice":totalPrice};
-
-}
-
-const isDiscount=(barcode)=>{
-    let database = loadPromotions()[0].barcodes;
-    for(let i = 0;i<database.length;i++){
-        if(barcode === database[i])
+const isDiscount = (barcode) => {
+    let promotions = loadPromotions()[0].barcodes;
+    for(let i = 0; i < promotions.length; i++) {
+        if (barcode === promotions[i]){
             return true;
+        }
     }
     return false;
-}
+};
 
-const calculateDiscount=(barcode,price,count)=>{
-    if(isDiscount(barcode)){
-        return count * price - Math.floor(count/3) * price;
-    }else{
+const calcultateDiscount = (barcode, price, count) => {
+    if (isDiscount(barcode)) {
+        return count * price - Math.floor(count / 3) * price;
+    }else {
         return price * count;
     }
-}
+};
 
-const calculateTotalDiscount=(allReceiptData)=>{
-
+const calculateTotalDiscount = (allReceiptData) => {
     let totalDiscount = 0;
-
-    for(let i = 0;i<allReceiptData.allReceiptItems.length;i++){
-        allReceiptData.allReceiptItems[i].sub
+    for (let i = 0; i < allReceiptData.length; i++) {
+        allReceiptData[i].subTolPrice = calcultateDiscount(allReceiptData[i].barcode, allReceiptData[i], price, allReceiptData.count);
+        totalDiscount += allReceiptData[i].subTolPrice;
     }
-}
+    return allReceiptData.totalReducedPrice = allReceiptData.totalPrice - totalDiscount;
+};
 
-const generateReceiptData=(tags)=>{
-    return calculateTotalDiscount(calculateTotalPrice(fillReceiptItem(normalizeTag(tags))));
-}
+const generateReceiptData = (tags) => {
+    console.log(calculateTotalDiscount(calculateTolPrice(fillReceipt(normalizedTag(tags)))));
+    return calculateTotalDiscount(calculateTolPrice(fillReceipt(normalizedTag(tags))));
+};
 
-
-
-
-
-
-
-
-
-
-
-exports.splitTag = splitTag
-
-
+module.exports = {
+    printReceipt: printReceipt,
+    isValid: isValid,
+    splitTag: splitTag,
+    dereplication: dereplication,
+    normalizedTag:normalizedTag,
+    getItemInfo: getItemInfo,
+    fillReceipt:fillReceipt,
+    calculateSubPrice:calculateSubPrice,
+    calculateTolPrice:calculateTolPrice,
+    generateReceiptData:generateReceiptData,
+};
