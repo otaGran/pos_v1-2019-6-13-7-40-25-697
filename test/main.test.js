@@ -7,6 +7,11 @@ const isAllBarcodeValid = require('../main/main.js').isAllBarcodeValid
 
 const isBarcodeValid = require('../main/main.js').isBarcodeValid
 const dereplication = require('../main/main.js').dereplication
+const normalizeTag = require('../main/main.js').normalizeTag
+const fillReceipt = require('../main/main.js').fillReceipt
+const calculateTolPrice = require('../main/main.js').calculateTolPrice
+const calculateTotalDiscount = require('../main/main.js').calculateTotalDiscount
+
 // describe('pos', () => {
 //
 //   it('should print text', () => {
@@ -66,6 +71,28 @@ it('should return {"barcode": "ITEM000001", "count": 10.2} when barcode is ITEM0
 it('should return {"barcode": "ITEM000001", "count": 10.2} when barcode is ITEM000001-10.2', ()=>{
   expect(dereplication([{"barcode": "ITEM000001", "count": 10.2},{"barcode": "ITEM000001", "count": 10.4}])).toStrictEqual( [{"barcode": "ITEM000001", "count": 20.6}]);
 })
+
+//normalizeTag
+it('should return {"barcode": "ITEM000001", "count": 10.2} when barcode is ITEM000001-10.2', ()=>{
+  expect(normalizeTag(['ITEM000001-10.2','ITEM000001-10.4'])).toStrictEqual( [{"barcode": "ITEM000001", "count": 20.6}] );
+})
+
+//fillReceipt
+it('should return {"barcode": "ITEM000001", "count": 10.2} when barcode is ITEM000001-10.2', ()=>{
+  expect(fillReceipt([{"barcode": "ITEM000001", "count": 20.6}])).toStrictEqual([{"barcode": "ITEM000001", "count": 20.6, "name": "雪碧", "price": 3, "unit": "瓶"}]);
+})
+
+//calculateTolPrice
+
+it('should return {"barcode": "ITEM000001", "count": 10.2} when barcode is ITEM000001-10.2', ()=>{
+  expect(calculateTolPrice( [{"barcode": "ITEM000001", "count": 20.6, "name": "雪碧", "price": 3, "unit": "瓶"}])).toStrictEqual( {"allReceiptItems": [{"barcode": "ITEM000001", "count": 20.6, "name": "雪碧", "price": 3, "subTolPrice": 61.800000000000004, "unit": "瓶"}], "totalPrice": 61.800000000000004});
+})
+
+//calculateTotalDiscount
+it('should return false when barcode is ITEM000001-10.2', ()=>{
+  expect(calculateTotalDiscount({"allReceiptItems": [{"barcode": "ITEM000001", "count": 20.6, "name": "雪碧", "price": 3, "subTolPrice": 61.800000000000004, "unit": "瓶"}], "totalPrice": 61.800000000000004})).toStrictEqual(false );
+})
+
 
 
 

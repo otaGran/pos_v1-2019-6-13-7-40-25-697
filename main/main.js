@@ -55,7 +55,7 @@ const dereplication = (splitedTags) => {
 
 };
 
-const normalizedTag = (tags) => {
+const normalizeTag = (tags) => {
     let splitedTags = [];
     for (let i = 0; i < tags.length; i++) {
         splitedTags.push(splitTag(tags[i]));
@@ -137,10 +137,11 @@ module.exports = {
     isBarcodeValid: isBarcodeValid,
     splitTag: splitTag,
     dereplication: dereplication,
-    normalizedTag:normalizedTag,
+    normalizeTag:normalizeTag,
     getItemInfo: getItemInfo,
     fillReceipt:fillReceipt,
     calculateSubPrice:calculateSubPrice,
     calculateTolPrice:calculateTolPrice,
     generateReceiptData:generateReceiptData,
+    calculateTotalDiscount:calculateTotalDiscount
 };

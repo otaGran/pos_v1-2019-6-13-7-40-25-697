@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="65340186-2eca-4459-a198-08674d9d8f9e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/main/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/main.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/main.test.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -15,15 +17,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/main/main.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="134">
-              <caret line="140" selection-start-line="140" selection-end-line="140" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
@@ -41,8 +34,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/main.test.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+            <state relative-caret-position="101">
+              <caret line="92" column="31" selection-start-line="92" selection-start-column="31" selection-end-line="92" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/main/main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="70">
+              <caret line="119" column="18" selection-start-line="119" selection-start-column="18" selection-end-line="119" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/fixtures.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="39">
+              <caret line="50" column="19" lean-forward="true" selection-start-line="50" selection-start-column="19" selection-end-line="50" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -56,8 +67,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/test/main-test.js" />
-        <option value="$PROJECT_DIR$/test/main.test.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/test/fixtures.js" />
+        <option value="$PROJECT_DIR$/test/main.test.js" />
         <option value="$PROJECT_DIR$/main/main.js" />
       </list>
     </option>
@@ -152,7 +164,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1562770406363</updated>
-      <workItem from="1562770407691" duration="7198000" />
+      <workItem from="1562770407691" duration="8356000" />
     </task>
     <task id="LOCAL-00001" summary="finish tasking diagram">
       <created>1562798704045</created>
@@ -168,34 +180,64 @@
       <option name="project" value="LOCAL" />
       <updated>1562804558630</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="update main.js">
+      <created>1562804790309</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1562804790310</updated>
+    </task>
+    <task id="LOCAL-00004" summary="update main.js">
+      <created>1562804857308</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1562804857308</updated>
+    </task>
+    <task id="LOCAL-00005" summary="update main.test.js">
+      <created>1562805469932</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1562805469932</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="main-test_js - 2019.07.10 at 23h 29m 34s.xml">
-      <configuration name="main-test.js" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
-    <history-entry file="main_test_js - 2019.07.10 at 23h 30m 00s.xml">
+    <history-entry file="main_test_js - 2019.07.11 at 08h 39m 40s.xml">
       <configuration name="main.test.js" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="main_test_js - 2019.07.10 at 23h 31m 02s.xml">
+    <history-entry file="main_test_js - 2019.07.11 at 08h 40m 58s.xml">
       <configuration name="main.test.js" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="main_test_js - 2019.07.10 at 23h 31m 37s.xml">
+    <history-entry file="main_test_js - 2019.07.11 at 08h 41m 09s.xml">
       <configuration name="main.test.js" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="main_test_js - 2019.07.10 at 23h 31m 55s.xml">
+    <history-entry file="main_test_js - 2019.07.11 at 08h 41m 32s.xml">
       <configuration name="main.test.js" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="main_test_js - 2019.07.10 at 23h 32m 18s.xml">
+    <history-entry file="main_test_js - 2019.07.11 at 08h 42m 51s.xml">
       <configuration name="main.test.js" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="main_test_js - 2019.07.10 at 23h 32m 26s.xml">
+    <history-entry file="main_test_js - 2019.07.11 at 08h 43m 15s.xml">
+      <configuration name="main.test.js" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="main_test_js - 2019.07.11 at 08h 44m 04s.xml">
+      <configuration name="main.test.js" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="main_test_js - 2019.07.11 at 08h 44m 32s.xml">
+      <configuration name="main.test.js" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="main_test_js - 2019.07.11 at 08h 44m 58s.xml">
+      <configuration name="main.test.js" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="main_test_js - 2019.07.11 at 08h 45m 11s.xml">
       <configuration name="main.test.js" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7198000" />
+    <option name="totallyTimeSpent" value="8356000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -203,15 +245,15 @@
     <layout>
       <window_info id="npm" side_tool="true" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23272438" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23272438" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" visible="true" weight="0.32876712" />
+      <window_info anchor="bottom" id="Version Control" weight="0.32876712" />
       <window_info anchor="bottom" id="Terminal" weight="0.32876712" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32876712" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.40547946" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.40547946" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -227,19 +269,11 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="finish tasking diagram" />
     <MESSAGE value="update task diagram." />
-    <option name="LAST_COMMIT_MESSAGE" value="update task diagram." />
+    <MESSAGE value="update main.js" />
+    <MESSAGE value="update main.test.js" />
+    <option name="LAST_COMMIT_MESSAGE" value="update main.test.js" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test/fixtures.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/main.test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="311">
@@ -250,10 +284,24 @@
     <entry file="file://$PROJECT_DIR$/task/task01.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/test/fixtures.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="39">
+          <caret line="50" column="19" lean-forward="true" selection-start-line="50" selection-start-column="19" selection-end-line="50" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/main.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="101">
+          <caret line="92" column="31" selection-start-line="92" selection-start-column="31" selection-end-line="92" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="140" selection-start-line="140" selection-end-line="140" />
+        <state relative-caret-position="70">
+          <caret line="119" column="18" selection-start-line="119" selection-start-column="18" selection-end-line="119" selection-end-column="18" />
         </state>
       </provider>
     </entry>
